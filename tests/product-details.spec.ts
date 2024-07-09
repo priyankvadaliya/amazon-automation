@@ -44,8 +44,6 @@ test('Validate product details, add to cart, verify cart details, and remove ite
     const cartPage = new CartPage(page);
     await cartPage.navigate();
     const cartItemTitle = await cartPage.getCartItemTitle();
-    console.log('Cart Item Title:', cartItemTitle);
-    console.log('Product Title:', productTitle);
 
     // Extract the first two words from the titles
     const extractFirstTwoWords = (title: string) => {
@@ -55,11 +53,7 @@ test('Validate product details, add to cart, verify cart details, and remove ite
     const productFirstTwoWords = extractFirstTwoWords(productTitle);
     const cartItemFirstTwoWords = extractFirstTwoWords(cartItemTitle);
 
-    // Compare the first two words
-    console.log('Product First Two Words:', productFirstTwoWords);
-    console.log('Cart Item First Two Words:', cartItemFirstTwoWords);
     expect(cartItemFirstTwoWords).toBe(productFirstTwoWords);
-
 
     const cartItemPrice = await cartPage.getCartItemPrice();
     expect(cartItemPrice).toBeCloseTo(productPrice, 0);

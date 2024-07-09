@@ -4,7 +4,8 @@ import { BasePage } from './BasePage';
 export class SearchResultsPage  extends BasePage {
 
   async verifySearchResults(term: string) {
-    const results = await this.page.$$('.s-result-item');
+    await this.page.waitForLoadState('load')
+    const results = await this.page.$$('.s-search-result');
     for (const result of results) {
       const text = await result.innerText();
       if (!text.toLowerCase().includes(term.toLowerCase())) {

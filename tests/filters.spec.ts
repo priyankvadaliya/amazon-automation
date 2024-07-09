@@ -12,14 +12,12 @@ test('Apply filters', async ({ page }) => {
   
   // Get initial results count
   const initialCount = await searchResultsPage.getResultsCount();
-  console.log(`Initial results count: ${initialCount}`);
 
   // Apply brand filter
   await searchResultsPage.applyFilter(userData.firstFilterTitle, userData.firstFilterOption);
 
   // Get results count after first filter
   const countAfterBrandFilter = await searchResultsPage.getResultsCount();
-  console.log(`Results count after brand filter: ${countAfterBrandFilter}`);
 
   // Verify that the results count has decreased
   expect(countAfterBrandFilter).toBeLessThan(initialCount);
@@ -38,7 +36,6 @@ test('Apply filters', async ({ page }) => {
 
   // Get results count after second filter
   const finalCount = await searchResultsPage.getResultsCount();
-  console.log(`Final results count: ${finalCount}`);
 
   // Verify that the results count has decreased further
   expect(finalCount).toBeLessThan(countAfterBrandFilter);
