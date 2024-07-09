@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run your tests
-        run: npx playwright test
+        run: npx playwright test --headless
         env:
           AMAZON_EMAIL: ${{ secrets.AMAZON_EMAIL }}
           AMAZON_PASSWORD: ${{ secrets.AMAZON_PASSWORD }}
