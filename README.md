@@ -10,7 +10,7 @@ Before running the tests, make sure you have the following installed:
 
 ## Setup
 
-1. Clone this repository: 
+1. Clone this repository: https://github.com/priyankvadaliya/amazon-automation.git
 
 2. Install dependencies:
 
