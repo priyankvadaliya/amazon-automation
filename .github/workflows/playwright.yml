@@ -20,4 +20,6 @@ jobs:
       - name: Run your tests
         run: npx playwright test
         env:
-          HOME: /root
+          AMAZON_EMAIL: ${{ secrets.AMAZON_EMAIL }}
+          AMAZON_PASSWORD: ${{ secrets.AMAZON_PASSWORD }}
+          USERNAME : ${{ secrets.USERNAME }}
